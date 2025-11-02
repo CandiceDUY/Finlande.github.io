@@ -222,36 +222,47 @@
         <div class="flag">🇫🇮</div>
 
         <div class="footer">
-            <p>Janvier 2025</p>
+            <p>Janvier 2026</p>
         </div>
     </div>
 
     <script>
-        const targetDate = new Date('2025-01-01T00:00:00+01:00').getTime();
+        // Date cible : 1er janvier 2026 à minuit (fuseau horaire de Paris)
+        const targetDate = new Date('2026-01-01T00:00:00+01:00').getTime();
         
         function updateCountdown() {
+            // Obtenir l'heure actuelle
             const now = new Date().getTime();
+            
+            // Calculer la différence
             const distance = targetDate - now;
 
+            // Si le compte à rebours est terminé
             if (distance < 0) {
                 document.getElementById('mainTitle').textContent = 'En Erasmus à Tampere, Finland';
                 document.getElementById('mainTitle').classList.add('arrived');
                 document.getElementById('countdownContainer').style.display = 'none';
+                document.querySelector('.footer p').textContent = 'Actuellement en Finlande';
                 return;
             }
 
+            // Calculer jours, heures, minutes, secondes
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+            // Afficher les valeurs avec un zéro devant si nécessaire
             document.getElementById('days').textContent = days.toString().padStart(2, '0');
             document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
             document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
             document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
         }
 
+        // Lancer le compte à rebours immédiatement
         updateCountdown();
+        
+        // Mettre à jour toutes les secondes
         setInterval(updateCountdown, 1000);
     </script>
 </body>
