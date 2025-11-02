@@ -105,9 +105,13 @@
         }
 
         .flag {
-            font-size: 3rem;
-            margin-top: 30px;
-            animation: wave 2s ease-in-out infinite;
+            margin-top: 20px;
+        }
+
+        .flag svg {
+            width: 160px;
+            height: 107px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
         }
 
         @keyframes fadeInDown {
@@ -196,8 +200,7 @@
     <div class="container">
         <div class="header">
             <h1 class="title" id="mainTitle">Départ en Erasmus</h1>
-            <p class="subtitle">Étudiant BUT Génie Chimique - Génie des Procédés</p>
-            <p class="location">IUT Nancy-Brabois → Université de Tampere | Finlande</p>
+            <p class="location">IUT Nancy-Brabois → Université de Tampere</p>
         </div>
 
         <div id="countdownContainer" class="countdown">
@@ -219,10 +222,16 @@
             </div>
         </div>
 
-        <div class="flag">🇫🇮</div>
-
         <div class="footer">
-            <p>Janvier 2026</p>
+            <p style="margin-bottom: 5px; font-size: 1.4rem; font-weight: 600; letter-spacing: 1px;">Janvier 2026</p>
+            <p style="margin-bottom: 15px; font-size: 1.2rem; font-weight: 500;">Finlande</p>
+            <div class="flag">
+                <svg viewBox="0 0 36 22" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="36" height="22" fill="#FFFFFF"/>
+                    <rect width="36" height="4" y="9" fill="#003580"/>
+                    <rect width="4" height="22" x="11" fill="#003580"/>
+                </svg>
+            </div>
         </div>
     </div>
 
